@@ -1,0 +1,25 @@
+﻿@model List<ProductListViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@foreach (var item in Model)
+{
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <img src="@item.ImageUrl" alt="@item.Name"  class="img-fluid" height="275" width="200" />
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="#">@item.Name</a>
+                </h4>
+                <small class="text-muted">
+                    <i class="fas fa-lira-sign"></i> @item.Price
+                </small>
+            </div>
+            <div class="card-footer text-center">
+                <a href="#" class="btn btn-outline-primary btn-sm">Detaylar</a>
+                <a href="#" class="btn btn-outline-primary btn-sm ml-3">Sepete Ekle</a>
+            </div>
+        </div>
+    </div>
+}
